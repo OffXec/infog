@@ -5,6 +5,8 @@
 
 InfoG is a Shellscript to perform Information Gathering 
 
+![infog](https://user-images.githubusercontent.com/34893261/41567454-b2c8f96a-7336-11e8-9924-00d7d7d0e8e3.png)
+
 ### Features
 
 - Check Website info
