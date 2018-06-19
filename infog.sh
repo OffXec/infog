@@ -347,7 +347,7 @@ read -p $'\e[1;92m[*] Cloudflare site: \e[0m' cf_site
 checkifcloudflare=$(curl -L -s "https://dns-api.org/NS/$cf_site" | grep -o 'cloudflare' | head -n1)
 
 if [[ $checkifcloudflare == *'cloudflare'* ]]; then
-checkCF=$(curl -s --request POST http://www.crimeflare.biz:82/cgi-bin/cfsearch.cgi -d "cfS='$cf_site'" -L --user-agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.63 Safari/537.31" > cloudflare.log)
+checkCF=$(curl -s --request POST http://www.crimeflare.biz:82/cgi-bin/cfsearch.cgi -d "cfS=$cf_site" -L --user-agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.63 Safari/537.31" > cloudflare.log)
 foundcf=$(grep -o "A direct-connect IP address was found" cloudflare.log)
 
 if [[ $foundcf == *'A direct-connect IP address was found'* ]]; then
